@@ -1,23 +1,11 @@
 package com.andrzej.testing.shape;
 
-import java.util.Objects;
-
 public class Square implements Shape {
 
     private int a;
-    private int b;
 
-    public Square(int a, int b) {
+    public Square(int a) {
         this.a = a;
-        this.b = b;
-    }
-
-    public int getA() {
-        return a;
-    }
-
-    public int getB() {
-        return b;
     }
 
     @Override
@@ -27,31 +15,27 @@ public class Square implements Shape {
 
     @Override
     public double getField() {
-        return 2 * a + 2 * b;
+        return 4 * a;
     }
 
     @Override
     public boolean equals(Object o) {
-        if(this==o) return true;
-        if((o == null) || getClass() != o.getClass()) return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
         Square square = (Square) o;
 
-        if(a != square.a) return false;
-        return b == square.b;
+        return a == square.a;
     }
 
     @Override
     public int hashCode() {
-        int result = a;
-        return 31 * result + b;
+        return a;
     }
 
     @Override
     public String toString() {
-        return "Square{" +
-                "a=" + a +
-                ", b=" + b +
-                '}';
+        return "Shape: " + getShapeType() + " Field: " + getField();
     }
 }
+

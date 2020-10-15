@@ -1,5 +1,6 @@
 package com.andrzej.testing.shape;
 
+import javax.sound.midi.Track;
 import java.util.Objects;
 
 public class Triangle implements Shape {
@@ -14,26 +15,26 @@ public class Triangle implements Shape {
         this.c = c;
     }
 
-    public int getA() {
-        return a;
-    }
-
-    public int getB() {
-        return b;
-    }
-
-    public int getC() {
-        return c;
-    }
-
     @Override
     public String getShapeType() {
-        return "Triangle";
+        return "triangle";
     }
 
     @Override
     public double getField() {
         return a + b + c;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if(o == null || getClass() != o.getClass()) return  false;
+
+        Triangle triangle = (Triangle) o;
+
+        if(a != triangle.a) return false;
+        if(b != triangle.b) return false;
+        return c == triangle.c;
     }
 
     @Override
@@ -45,23 +46,7 @@ public class Triangle implements Shape {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if(this == o) return true;
-        if((o==null) && getClass() != o.getClass()) return false;
-
-        Triangle triangle = (Triangle) o;
-
-        if(a!= triangle.a) return false;
-        if(b!= triangle.b) return false;
-        return c == triangle.c;
-    }
-
-    @Override
     public String toString() {
-        return "Triangle{" +
-                "a=" + a +
-                ", b=" + b +
-                ", c=" + c +
-                '}';
+        return "Shape: " + getShapeType() + " Field: " + getField();
     }
 }

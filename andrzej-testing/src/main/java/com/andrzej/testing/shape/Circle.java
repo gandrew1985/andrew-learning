@@ -1,7 +1,5 @@
 package com.andrzej.testing.shape;
 
-import java.util.Objects;
-
 public class Circle implements Shape {
 
     private int radius;
@@ -41,8 +39,7 @@ public class Circle implements Shape {
 
     @Override
     public String toString() {
-        return "Circle{" +
-                "radius=" + radius +
-                '}';
+        return "Shape" + getShapeType() + " Field: " + getField();
     }
 }
+
