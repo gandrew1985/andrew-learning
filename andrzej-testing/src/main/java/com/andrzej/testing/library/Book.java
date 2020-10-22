@@ -38,10 +38,12 @@ public class Book {
         return Objects.equals(author,book.author);
     }
 
+
+
     @Override
     public int hashCode() {
-        int result = title.hashCode();
-        result = 31 * result + author.hashCode();
+        int result = title != null ? title.hashCode() : 0;
+        result = 31 * result + (author != null ? author.hashCode() : 0);
         result = 31 * result + publicationYear;
         return result;
     }
