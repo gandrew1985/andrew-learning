@@ -49,14 +49,14 @@ public final class Book {
 
     @Override
     public boolean equals(Object o) {
-        if(this == o) return  true;
-        if(o == null || getClass() != o.getClass()) return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
         Book book = (Book) o;
 
-        if(!Objects.equals(author, book.author)) return false;
-        if(!Objects.equals(yearOfPublication,book.yearOfPublication)) return false;
-        if(!Objects.equals(signature,book.signature)) return false;
-        return Objects.equals(title, book.title);
+        if (yearOfPublication != book.yearOfPublication) return false;
+        if (!Objects.equals(author, book.author)) return false;
+        if (!Objects.equals(title, book.title)) return false;
+        return Objects.equals(signature, book.signature);
     }
 }

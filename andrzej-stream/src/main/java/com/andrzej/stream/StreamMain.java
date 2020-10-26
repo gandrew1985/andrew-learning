@@ -1,8 +1,9 @@
 package com.andrzej.stream;
 
-import com.andrzej.stream.book.Book;
-import com.andrzej.stream.book.BookDirectory;
+import com.andrzej.stream.forumuser.Forum;
+import com.andrzej.stream.forumuser.ForumUser;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -10,14 +11,20 @@ import java.util.stream.Collectors;
 public class StreamMain {
     public static void main(String[] args) {
 
-        BookDirectory bookDirectory = new BookDirectory();
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
+        List<Integer> twoEvenSquares =
+                numbers.stream()
+                        .filter(n -> {
+                            System.out.println("filtering " + n);
+                            return n % 2 == 0;
+                        }) //2,4,6,8
+                        .map(n -> {
+                            System.out.println("mapping " + n);
+                            return n * n;
+                        })
+                        .limit(2)
+                        .collect(Collectors.toList());
 
-        String theResultString = bookDirectory.getList().stream()
-                .filter(book -> book.getYearOfPublication()> 2005)
-                .map(Book::toString)
-                .collect(Collectors.joining(",\n","<<", ">>"));
-
-        System.out.println(theResultString);
-
+        System.out.println(twoEvenSquares);
     }
 }
