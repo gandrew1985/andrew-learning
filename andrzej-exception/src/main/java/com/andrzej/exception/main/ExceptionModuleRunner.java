@@ -1,0 +1,11 @@
+package com.andrzej.exception.main;
+
+import com.andrzej.exception.io.FileReader;
+
+public class ExceptionModuleRunner {
+
+    public static void main(String[] args) {
+        FileReader fileReader = new FileReader();
+        fileReader.readFile();
+    }
+}

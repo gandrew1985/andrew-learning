@@ -1,4 +1,5 @@
 rootProject.name = 'andrzej-learning'
 include 'andrzej-testing'
 include 'andrzej-stream'
+include 'andrzej-exception'
 
