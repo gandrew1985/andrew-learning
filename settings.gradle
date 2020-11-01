@@ -2,4 +2,7 @@ rootProject.name = 'andrzej-learning'
 include 'andrzej-testing'
 include 'andrzej-stream'
 include 'andrzej-exception'
+include 'andrzej-good-patterns'
+include 'andrze-spring-intro'
+include 'andrzej-spring'
 
